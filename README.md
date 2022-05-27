@@ -50,7 +50,7 @@ docker-compose -f FaxNoLogs-Containers-LinuxSetup.yml up -d
 ```
 
 The above will get all neccessary images from the remote repo and start the containers. Will also create on host the folder
-C:\faxnologs\data which will be the volume for the database container to store it databases.
+/var/faxnologs/data which will be the volume for the database container to store it databases.
 
 To stop the containers from running run:
 ```
