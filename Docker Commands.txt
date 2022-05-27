@@ -1,0 +1,27 @@
+How to push image to remote repo
+==========================================================================
+
+1. MUST tag the image created with the name at the repo
+
+	docker image tag <image by Visual Studio build> kparginos/repo_name:tag (e.g. :latest)
+
+	e.g.:
+	docker image tag faxnologswebapp:latest kparginos/faxnologswebapp:latest
+	
+2. Push the image
+
+	docker image push kparginos/faxnologswebapp:latest
+
+
+
+How to create the containers(db and app) with docker-compose
+==========================================================================
+If the host machine's is Windows then:
+	1. Download 
+
+
+How to apply the DB Initial setup
+==========================================================================
+
+Run DBSetup in the running container
+	docker exec faxnologs_webapp bash -c "apt-get update && apt-get -y install wget && wget --no-check-certificate https://github.com/kparginos/faxnologs-dbsetup/raw/main/DBSetup.tar && mkdir dbsetup && tar xf DBSetup.tar -C dbsetup && cd dbsetup && sed -i 's/localhost,1433/db/g' appsettings.json && dotnet FaxNoLogs.Migrations.dll"
