@@ -86,5 +86,19 @@ The above command, should it run correctly, must apply the following:
   6. Switch to dbsetup folder
   7. Change DBSetup app configuration to target the MSSql server of the Database container
   8. Run the DB initialization script
+	
+If the last command that creates the database completes successfully, there should be the following output to console:
+
+```
+Start Database Initialization...
+Building Database...
+Creating Tables...
+Creating Tables - OK
+Create SPs...
+Create SPs - OK
+Create Views...
+Create Views - OK
+Database Initialization Completed
+```
 </p>
 </details>
