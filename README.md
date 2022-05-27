@@ -4,11 +4,11 @@ Assuming Docker is installed on machine that hosts the containers for database a
 
   ***docker exec faxnologs_webapp bash -c "apt-get update && apt-get -y install wget && wget --no-check-certificate https://github.com/kparginos/faxnologs-dbsetup/raw/main/DBSetup.tar && mkdir dbsetup && tar xf DBSetup.tar -C dbsetup && cd dbsetup && sed -i 's/localhost,1433/db/g' appsettings.json && dotnet FaxNoLogs.Migrations.dll"***
   
-The above command, should it runn correctly, must apply the following:
+The above command, should it run correctly, must apply the following:
 
-  1. Update OS
-  2. Install wget utility
-  3. Use wget to download the DBSetup.tar
+  1. Update the container's OS
+  2. Install **wget** utility
+  3. Use wget to download the **DBSetup.tar**
   4. Create a dbsetup folder
   5. Extract to above folder the contents of DBSetup.tar
   6. Switch to dbsetup folder
