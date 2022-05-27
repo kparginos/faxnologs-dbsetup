@@ -1,12 +1,24 @@
-# FaxNoLogs Database Initial Setup
+# FaxNoLogs Containers Preparation and Database Initial Setup
 
-
-## How to create the containers(db and app) on a host machine
-1. Setup the containers on a Windows host machine:
-
-	 i. Download https://github.com/kparginos/faxnologs-dbsetup/blob/main/FaxNoLogs-Containers-WinSetup.yml
+<details><summary>Installation Pre-requisities</summary>
+<p>
 	
-	ii. From a command prompt run the following:
+In order to setup the containers neccessary for the FaxNoLogs application, the host machine must have docker support installed.
+According to the type of your OS you can obtain Docker from:
+	
+1. https://docs.docker.com/desktop/linux/install/ for Linux
+2. https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe for Windows
+	
+It is advisable to read Docker's vendor notes for each OS before proceeding with the installation
+</p>
+</details>
+
+<details><summary>How to create the containers(db and app) on a host machine</summary>
+<p>
+	
+* Setup the containers on a Windows host machine:
+	1. Download https://github.com/kparginos/faxnologs-dbsetup/blob/main/FaxNoLogs-Containers-WinSetup.yml
+	2. From a command prompt run the following(must be at the same folder where you've downloaded the above):
 
 ```
 docker-compose -f FaxNoLogs-Containers-WinSetup.yml up -d
@@ -30,11 +42,9 @@ docker-compose -f FaxNoLogs-Containers-WinSetup.yml down
 ```
 Note: This will not erase the volumes stored at the host machine
 
-2. Setup the containers on a Linux host machine:
-
-	 i. Download https://github.com/kparginos/faxnologs-dbsetup/blob/main/FaxNoLogs-Containers-LinuxSetup.yml
-	
-	ii. From a shell run the following:
+* Setup the containers on a Linux host machine:
+	1. Download https://github.com/kparginos/faxnologs-dbsetup/blob/main/FaxNoLogs-Containers-LinuxSetup.yml
+	2. From a shell run the following(must be at the same folder where you've downloaded the above):
 ```
 docker-compose -f FaxNoLogs-Containers-LinuxSetup.yml up -d
 ```
@@ -56,8 +66,11 @@ To remove the containers run:
 docker-compose -f FaxNoLogs-Containers-WinSetup.yml down
 ```
 Note: This will not erase the volumes stored at the host machine
+</p>
+</details>
 
->## How to apply the DB Initial setup
+<details><summary>How to apply the DB Initial setup</summary>
+<p>
 
 At the host machine run the following:
 ```
@@ -73,3 +86,5 @@ The above command, should it run correctly, must apply the following:
   6. Switch to dbsetup folder
   7. Change DBSetup app configuration to target the MSSql server of the Database container
   8. Run the DB initialization script
+</p>
+</details>
