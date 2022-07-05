@@ -74,17 +74,19 @@ Note: This will not erase the volumes stored at the host machine
 
 In order to update the latest containers you need to do the following:
 
-For the Windows Host run this command:
+* For the Windows Host run this command:
 
 ```
 docker-compose -f FaxNoLogs-Containers-WinSetup.yml pull
 ```
 
-For the Linux Host run this command:
+* For the Linux Host run this command:
 
 ```
 docker-compose -f FaxNoLogs-Containers-LinuxSetup.yml pull
 ```
+
+Once finished run the stop and start commands to refresh the containers.
 
 </p>
 </details>
