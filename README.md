@@ -69,6 +69,26 @@ Note: This will not erase the volumes stored at the host machine
 </p>
 </details>
 
+<details><summary>How to update the containers(db and app) on a host machine</summary>
+<p>
+
+In order to update the latest containers you need to do the following:
+
+For the Windows Host run this command:
+
+```
+docker-compose -f FaxNoLogs-Containers-WinSetup.yml pull
+```
+
+For the Linux Host run this command:
+
+```
+docker-compose -f FaxNoLogs-Containers-LinuxSetup.yml pull
+```
+
+</p>
+</details>
+
 <details><summary>How to apply the DB Initial setup</summary>
 <p>
 
